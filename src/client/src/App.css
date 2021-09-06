@@ -1,54 +1,113 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 30vmin;
-  pointer-events: none;
-}
-
-.Node-logo {
-  height: 30vmin;
-  pointer-events: none;
-}
-
-.logo-box {
-  padding-right: 4rem;
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
 body {
-  background-color: #d7fffd;
+	box-sizing: border-box;
+	margin: 0;
+	background-color: rgb(60, 60, 60);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#map-holder {
+	width: 400px;
+	height: 400px;
+	overflow: hidden;
+	position: relative;
+	background-color: transparent;
 }
 
-.App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: black;
+#close-button {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 45px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 25px;
+	font-weight: 800;
+	/* background-color: rgb(201, 201, 201); */
+	fill: rgb(201, 201, 201);
+	border: none;
+	cursor: pointer;
 }
 
-.App-link {
-  color: #003948;
+#close-button:hover {
+	transform: scale(1.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+svg {
+	/* padding-top: 20px; */
+	fill: rgb(60, 60, 60);
+}
+
+.background {
+	margin: 0;
+	padding: 0;
+	pointer-events: all;
+}
+
+.mesh {
+	/* fill: none; */
+	stroke: rgba(199, 199, 199, 0.5);
+	stroke-width: 0.05px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.provinceLabel {
+	opacity: 0;
+}
+
+.provinceName {
+	color: black;
+}
+
+.tooltip {
+	transition: transform 1s;
+}
+
+.tooltip-container {
+	border-radius: 5px;
+	position: relative;
+	z-index: 200;
+}
+
+.tooltip-content {
+	font-size: 11px;
+	position: absolute;
+}
+
+.tooltip-content h1 {
+	overflow: hidden;
+	padding: 5px;
+	background-color: white;
+}
+
+.province {
+	stroke: rgb(43, 43, 43);
+	stroke-width: 0.5px;
+	cursor: pointer;
+	position: absolute;
+	z-index: 10;
+	opacity: 1;
+	fill: gray;
+	transition: all 1s;
+}
+
+.dptos {
+	stroke: green;
+	cursor: pointer;
+	position: absolute;
+	z-index: 5;
+	cursor: pointer;
+}
+
+.localidad {
+	stroke: white;
+	cursor: pointer;
+}
+
+.active {
+	stroke-width: 0.01;
+	opacity: 0;
+	fill: none;
+	transition: all 1s;
 }
